@@ -1,4 +1,0 @@
-jema
-====
-
-Jenkins Manager
