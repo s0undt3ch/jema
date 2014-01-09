@@ -1,0 +1,7 @@
+<a href="{{ url_for('account.profile') }}" class="dropdown-toggle btn btn-info" data-toggle="dropdown">
+  {% if g.identity.account.avatar_url -%}
+  <img class="gravatar" height="32" width="32" src="{{ g.identity.account.avatar_url }}"/>
+  {%- endif %} {{ g.identity.account.login }}&nbsp;
+  <b class="caret"></b>
+</a>
+{{ menubuilder.render('top_account_nav') }}

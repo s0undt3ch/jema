@@ -1,0 +1,15 @@
+{% extends "account/layout.html" %}
+
+{% block form_contents %}
+{{ render_field(form.login, readonly=true, disabled=true) }}
+{{ render_field(form.name, readonly=true, disabled=true) }}
+{% if form.email.data %}{{ render_field(form.email, readonly=true, disabled=true) }}{% endif %}
+{{ render_field(form.timezone) }}
+{% if form.locale.choices()|length > 1 -%}
+{{ render_field(form.locale) }}
+{%- endif %}
+{% endblock %}
+
+{% block form_actions %}
+  {{ form.update() }}
+{% endblock %}

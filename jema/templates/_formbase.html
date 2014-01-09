@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% from "_form_helpers.html" import render_field %}
+
+{% block title %}{{ form.title }}{% endblock %}
+
+{% block contents %}
+  {% block before_form %}{% endblock %}
+  <form method="POST" action="" role="form" class="form">
+    <div class="panel panel-default">
+      {% block form_legend -%}
+      <div class="panel-heading">
+        {{ form.title }}
+      </div>
+      {%- endblock %}
+
+      <div class="panel-body">
+        {{ form.hidden_tag() }}
+        {% block form_contents %}{% endblock %}
+      </div>
+      <div class="panel-footer">
+        <div class="form-group form-actions">
+          {% block form_actions %}{% endblock %}
+        </div>
+      </div>
+    </div>
+  </form>
+  {% block after_form %}{% endblock %}
+{% endblock %}
+
+{% block footer %}
+  {% block form_footer %}{% endblock %}
+{% endblock %}

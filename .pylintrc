@@ -27,7 +27,7 @@ persistent=yes
 
 # List of plugins (as comma separated values of python modules names) to load,
 # usually to register additional checkers.
-load-plugins=salttesting.pylintplugins.pep8,salttesting.pylintplugins.pep263,salttesting.pylintplugins.strings
+load-plugins=pylinthelpers.brain.flask_sqlalchemy_transform,salttesting.pylintplugins.pep8,salttesting.pylintplugins.pep263,salttesting.pylintplugins.strings
 
 
 [MESSAGES CONTROL]
@@ -42,6 +42,7 @@ load-plugins=salttesting.pylintplugins.pep8,salttesting.pylintplugins.pep263,sal
 # multiple time (only on the command line, not in the configuration file where
 # it should appear only once).
 disable=W0142,
+  C0103
 #  E8121,
 #  E8122,
 #  E8123,

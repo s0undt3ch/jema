@@ -1,0 +1,202 @@
+@import url(http://fonts.googleapis.com/css?family=Electrolize|Share+Tech+Mono);
+
+@mixin initial_html_and_body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Electrolize";
+}
+
+html {
+  @include initial_html_and_body;
+}
+
+body {
+  @include initial_html_and_body;
+}
+
+/* We want WIDE divs */
+div.container { width: 98%; }
+
+div.navbar-header {
+  background-image: url(saltstack_logo.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+
+#footer {
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Debug DIV */
+#dbdebug {
+  font-size: 0.7em;
+  margin: 0 auto;
+  padding: 0 0;
+  width: 99%;
+
+  //border: 1px solid #5C9CCC;
+
+  .left { text-align: left }
+
+  td, th {
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px 10px;
+  }
+
+  td.params {
+    white-space: nowrap;
+    line-height: 5px;
+
+    ol {
+      margin: 2px 2px;
+      padding: 5px 5px;
+    }
+  }
+
+  tbody td { font-family: "Share Tech Mono"; }
+  th.title { font-size: 1.75em; }
+  th.total { text-align: right; }
+
+}
+
+#wrap {
+  div.main-container {
+    ul.context-nav {
+      margin: 0px -30px 15px -30px;
+    }
+  }
+
+  form .panel-footer {
+    padding: 10px 10px;
+
+    .form-group {
+      margin-bottom: auto;
+    }
+  }
+
+  table {
+    tbody > tr > td {
+      vertical-align: middle;
+    }
+
+    tbody {
+      tr {
+        td.narrow {
+          width: 1%;
+          white-space: nowrap;
+        }
+        td.expand {
+          width: 50%;
+        }
+      }
+    }
+    thead {
+      tr {
+        th.narrow {
+          width: 1%;
+          white-space: nowrap;
+        }
+        th.expand {
+          width: 50%;
+        }
+      }
+    }
+
+  }
+}
+
+.form-control { width: auto; }
+
+/* Inverted tab navigation */
+.nav-tabs-inverted {
+  .nav-tabs {
+    border-top: 1px solid #dddddd;
+    border-bottom: none;
+  }
+  .nav-tabs > li {
+    float: right;
+    margin-top: -1px;
+  }
+  .nav-tabs > li > a {
+    margin-left: 2px;
+    line-height: 1.428571429;
+    border: 1px solid transparent;
+    border-radius: 0 0 4px 4px;
+  }
+  .nav-tabs > li > a:hover {
+    border-color: #eeeeee #eeeeee #dddddd;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:hover,
+  .nav-tabs > li.active > a:focus {
+    color: #555555;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-top-color: transparent;
+    cursor: default;
+  }
+}
+
+/* Main Navigation */
+.main-nav {
+  position: relative;
+  bottom: -1px;
+  padding-top: 10px;
+
+  .nav-tabs {
+    border-bottom: none;
+
+    li {
+
+      a {
+        border-style: dotted;
+        border-bottom: none;
+      }
+      a.inactive {
+        border-color: #474747;
+      }
+      a.sensible {
+        border-color: #ff0000;
+      }
+      a.sensible.active {
+          color: #ff0000;
+          border-color: #ddd;
+      }
+    }
+
+    li.account-nav {
+      a {
+        border-style: none;
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.context-nav {
+  position: relative;
+  top: 50px;
+  padding: 0 60px;
+  .nav-tabs {
+    li {
+      a {
+        border-color: #080808;
+      }
+      a.inactive {
+        color: #428BCA;
+        background-color: #222;
+      }
+      a.active {
+        border: 1px dotted #ddd;
+      }
+    }
+  }
+}
+
+.nav-tabs .account-nav {
+  margin-top: -11px;
+  a { border-radius: 0 0 4px 4px; }
+}

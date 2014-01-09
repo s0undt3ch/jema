@@ -34,3 +34,15 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# Ignore compiled css files
+jema/static/jema.css
+
+# Ignore SASS cache files
+.sass-cache
+
+# Ignore local vimrc file
+.lvimrc
+
+# Ignore compiled translations
+jema/translations/**/LC_MESSAGES/*.mo

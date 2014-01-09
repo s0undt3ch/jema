@@ -1,0 +1,15 @@
+{% macro render_field(field, show_description=True) %}
+<div class="form-group{% if field.errors %} has-error{% endif %}">
+  {{ field.label }}
+  {{ field(
+       placeholder=field.label.text,
+       class_=' '.join([kwargs.pop('class_', ''),
+                        kwargs.pop('class', ''),
+                        (field.errors and 'has-error' or '')] + ['form-control']).strip(),
+       **kwargs)
+  }}
+  {% if field.description and show_description %}
+    <span class="help-block">{{ field.description }}</span>
+  {% endif %}
+</div>
+{% endmacro %}
